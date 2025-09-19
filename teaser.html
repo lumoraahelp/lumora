@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumora — Something is Coming</title>
+  <meta name="description" content="Light for the mind. A quiet signal. A new kind of companion." />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <!-- Vanta Waves -->
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+  <style>
+    :root {
+      --lumora-sky: #f5f7ff;
+      --lumora-sunrise: #ffe8b5;
+      --lumora-lavender: #d7d2ff;
+      --lumora-violet: #7a6cff;
+      --lumora-amber: #ffcf6b;
+      --lumora-text-dark: #1a1d2e;
+      --lumora-text-soft: #4f5375;
+    }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--lumora-sky); color: var(--lumora-text-dark); }
+    .hero-gradient {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 232, 181, 0.7), transparent 60%),
+        radial-gradient(circle at 78% 15%, rgba(215, 210, 255, 0.65), transparent 55%),
+        linear-gradient(160deg, #ffffff 0%, #f2f4ff 100%);
+    }
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid rgba(122, 108, 255, 0.15);
+      box-shadow: 0 20px 40px -25px rgba(52, 58, 90, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 207, 107, 0.6);
+      box-shadow: 0 30px 50px -20px rgba(95, 104, 150, 0.55);
+    }
+    .feature-card h3 { color: var(--lumora-text-dark); }
+    .feature-card p { color: var(--lumora-text-soft); }
+    .feature-icon {
+      background: linear-gradient(135deg, rgba(122, 108, 255, 0.25), rgba(255, 207, 107, 0.3));
+      color: var(--lumora-violet);
+      box-shadow: inset 0 0 10px rgba(122, 108, 255, 0.18);
+    }
+    .glow-button {
+      background: linear-gradient(135deg, var(--lumora-amber) 0%, var(--lumora-violet) 100%);
+      box-shadow: 0 12px 30px -12px rgba(122, 108, 255, 0.6);
+    }
+    .glow-button:hover { filter: brightness(1.06); }
+    .glass-button {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(122, 108, 255, 0.25);
+      backdrop-filter: blur(10px);
+      color: var(--lumora-text-dark);
+    }
+    .glass-button:hover { background: rgba(255, 255, 255, 0.9); }
+    .waitlist-form {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(122, 108, 255, 0.2);
+      box-shadow: 0 25px 50px -30px rgba(77, 86, 124, 0.45);
+    }
+    .hero-title { text-shadow: 0 12px 35px rgba(255, 207, 107, 0.45); }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <div id="vanta-bg" class="min-h-screen">
+        <div class="relative overflow-hidden hero-gradient">
+
+    <!-- Navigation -->
+    <nav class="relative z-10 px-6 py-6 flex justify-between items-center">
+      <div class="flex items-center">
+        <i data-feather="moon" class="text-[#7a6cff] w-8 h-8 mr-2"></i>
+        <span class="text-[#1a1d2e] text-2xl font-bold">Lumora</span>
+      </div>
+      <!-- <div>
+        <a href="#waitlist" class="px-6 py-2 text-white font-medium rounded-full transition duration-300 glow-button hover:opacity-95">
+          Request Early Access
+        </a>
+      </div> -->
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-6 py-20 md:py-32 text-center">
+      <p class="tracking-[.25em] text-[#4f5375] text-xs sm:text-sm mb-3" data-aos="fade-up">A QUIET SIGNAL</p>
+      <h1 class="text-4xl md:text-6xl font-bold text-[#1a1d2e] mb-4 hero-title" data-aos="fade-up" data-aos-delay="60">
+        Light for the mind.
+      </h1>
+      <p class="text-lg md:text-xl text-[#4f5375] max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="120">
+        A quiet signal. Whispers of something new.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="180">
+        <!-- <a href="#waitlist" class="px-8 py-4 font-medium rounded-full transition duration-300 text-white glow-button hover:opacity-95">
+          Request Early Access
+        </a> -->
+        <!-- <a href="#hints" class="px-8 py-4 font-medium rounded-full transition duration-300 text-[#1a1d2e] glass-button"> -->
+        <a href="#hints" class="px-8 py-4 font-medium rounded-full transition duration-300 text-white glow-button hover:opacity-95">
+          Follow the Signal
+        </a>
+      </div>
+      <div class="mt-8 text-[#4f5375] text-sm" data-aos="fade-up" data-aos-delay="220">From signal to self. // 2025</div>
+    </div>
+
+    <!-- Hints Section -->
+    <section id="hints" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1d2e] mb-2" data-aos="fade-up">Follow the signal</h2>
+          <p class="text-[#4f5375] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="60">Hints, not answers.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Rhythms -->
+          <div class="feature-card rounded-xl p-8 transition duration-300" data-aos="fade-up">
+            <div class="feature-icon w-12 h-12 rounded-full flex items-center justify-center mb-5 opacity-80">
+              <i data-feather="activity" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3">Rhythms</h3>
+            <p>Rhythms of thought. Waves of calm.</p>
+          </div>
+
+          <!-- Whispers -->
+          <div class="feature-card rounded-xl p-8 transition duration-300" data-aos="fade-up" data-aos-delay="60">
+            <div class="feature-icon w-12 h-12 rounded-full flex items-center justify-center mb-5 opacity-80">
+              <i data-feather="message-circle" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3">Whispers</h3>
+            <p>Words that meet you where you are.</p>
+          </div>
+
+          <!-- Quiet -->
+          <div class="feature-card rounded-xl p-8 transition duration-300" data-aos="fade-up" data-aos-delay="120">
+            <div class="feature-icon w-12 h-12 rounded-full flex items-center justify-center mb-5 opacity-80">
+              <i data-feather="shield" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3">Quiet</h3>
+            <p>Your space. Your data. The rest is noise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <!-- <section id="waitlist" class="py-20">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="waitlist-form rounded-2xl p-8 md:p-12 text-center" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1d2e] mb-4">Be first to know</h2>
+          <p class="text-xl text-[#4f5375] mb-8 max-w-2xl mx-auto">No pitch. No pressure. Just a quiet note when the next piece arrives.</p>
+
+          <form id="early-form" class="max-w-md mx-auto" novalidate>
+            <div class="flex flex-col sm:flex-row gap-4 mb-4">
+              <input name="name" aria-label="Your Name" type="text" placeholder="Your Name" class="flex-grow px-4 py-3 rounded-full bg-white/90 border border-[#d8dcff] text-[#1a1d2e] placeholder-[#8b8fab] focus:outline-none focus:ring-2 focus:ring-[#7a6cff] focus:border-transparent" required />
+              <input name="email" aria-label="Email Address" type="email" placeholder="Email Address" class="flex-grow px-4 py-3 rounded-full bg-white/90 border border-[#d8dcff] text-[#1a1d2e] placeholder-[#8b8fab] focus:outline-none focus:ring-2 focus:ring-[#7a6cff] focus:border-transparent" required />
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+            </div>
+            <button id="submit-btn" type="submit" class="px-8 py-3 text-white font-medium rounded-full transition duration-300 w-full sm:w-auto glow-button hover:opacity-95">Request Early Access</button>
+            <p id="form-status" class="mt-3 text-sm text-[#4f5375]" aria-live="polite"></p>
+          </form>
+
+          <p class="text-[#4f5375] mt-6 text-sm">We keep it minimal.</p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="text-[#1a1d2e] py-12 border-t border-[#d8dcff]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-6 md:mb-0">
+            <i data-feather="moon" class="text-[#7a6cff] w-6 h-6 mr-2"></i>
+            <span class="text-xl font-bold">Lumora</span>
+          </div>
+          <div class="flex space-x-6">
+            <a target="_blank" href="http://linkedin.com/company/lumorawellness/" class="hover:text-[#ffcf6b] transition duration-300" aria-label="LinkedIn">
+              <i data-feather="linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 text-center md:text-left">
+          <p class="text-[#4f5375]">© 2025 Lumora. Becoming.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Respect reduced motion
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function initVanta(){
+      if (prefersReduced || !window.VANTA) return;
+      VANTA.WAVES({
+        el: '#vanta-bg',
+        color: 0xbfd0ff,
+        backgroundColor: 0xf5f7ff,
+        waveHeight: 10,
+        shininess: 35,
+        waveSpeed: 0.45,
+        zoom: 0.9
+      });
+    }
+
+    function initAOS(){
+      if (prefersReduced || !window.AOS) return;
+      AOS.init({ duration: 650, once: true });
+    }
+
+    // ====== FORM SUBMIT (Formspree) ======
+    const FORM_ENDPOINT = 'https://formspree.io/f/mzzanbqy'; // <-- replace with your Formspree endpoint
+
+    function attachEarlyForm(){
+      const form = document.getElementById('early-form');
+      if (!form) return;
+      const statusEl = document.getElementById('form-status');
+      const submitBtn = document.getElementById('submit-btn');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = '';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.8';
+
+        const fd = new FormData(form);
+        if (fd.get('_gotcha')) { submitBtn.disabled = false; submitBtn.style.opacity=''; return; }
+
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            body: fd,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            statusEl.textContent = 'Thanks! Check your inbox soon.';
+          } else {
+            statusEl.textContent = 'Something went wrong. Please try again.';
+          }
+        } catch (err) {
+          statusEl.textContent = 'Network error—please try again.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initVanta();
+      initAOS();
+      if (window.feather) feather.replace();
+      attachEarlyForm();
+    });
+  </script>
+</body>
+</html>
