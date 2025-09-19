@@ -29,6 +29,11 @@
     }
     html { scroll-behavior: smooth; }
     body { background-color: var(--lumora-sky); color: var(--lumora-text-dark); }
+
+    /* fix: keep content above Vanta canvas and don't let canvas capture touch/scroll */
+    #vanta-bg { position: relative; overflow: hidden; }
+    #vanta-bg > canvas { pointer-events: none !important; }
+
     .hero-gradient {
       background:
         radial-gradient(circle at 20% 20%, rgba(255, 232, 181, 0.7), transparent 60%),
@@ -152,26 +157,7 @@
     </section>
 
     <!-- Waitlist Section -->
-    <!-- <section id="waitlist" class="py-20">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="waitlist-form rounded-2xl p-8 md:p-12 text-center" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1d2e] mb-4">Be first to know</h2>
-          <p class="text-xl text-[#4f5375] mb-8 max-w-2xl mx-auto">No pitch. No pressure. Just a quiet note when the next piece arrives.</p>
-
-          <form id="early-form" class="max-w-md mx-auto" novalidate>
-            <div class="flex flex-col sm:flex-row gap-4 mb-4">
-              <input name="name" aria-label="Your Name" type="text" placeholder="Your Name" class="flex-grow px-4 py-3 rounded-full bg-white/90 border border-[#d8dcff] text-[#1a1d2e] placeholder-[#8b8fab] focus:outline-none focus:ring-2 focus:ring-[#7a6cff] focus:border-transparent" required />
-              <input name="email" aria-label="Email Address" type="email" placeholder="Email Address" class="flex-grow px-4 py-3 rounded-full bg-white/90 border border-[#d8dcff] text-[#1a1d2e] placeholder-[#8b8fab] focus:outline-none focus:ring-2 focus:ring-[#7a6cff] focus:border-transparent" required />
-              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-            </div>
-            <button id="submit-btn" type="submit" class="px-8 py-3 text-white font-medium rounded-full transition duration-300 w-full sm:w-auto glow-button hover:opacity-95">Request Early Access</button>
-            <p id="form-status" class="mt-3 text-sm text-[#4f5375]" aria-live="polite"></p>
-          </form>
-
-          <p class="text-[#4f5375] mt-6 text-sm">We keep it minimal.</p>
-        </div>
-      </div>
-    </section> -->
+    <!-- (unchanged) -->
 
     <!-- Footer -->
     <footer class="text-[#1a1d2e] py-12 border-t border-[#d8dcff]">
@@ -182,7 +168,8 @@
             <span class="text-xl font-bold">Lumora</span>
           </div>
           <div class="flex space-x-6">
-            <a target="_blank" href="http://linkedin.com/company/lumorawellness/" class="hover:text-[#ffcf6b] transition duration-300" aria-label="LinkedIn">
+            <!-- fix: use https to avoid mixed content issues -->
+            <a target="_blank" href="https://linkedin.com/company/lumorawellness/" class="hover:text-[#ffcf6b] transition duration-300" aria-label="LinkedIn">
               <i data-feather="linkedin"></i>
             </a>
           </div>
